@@ -1,75 +1,118 @@
 /* =================================================== */
-/* 1. CONFIGURAÇÕES GLOBAIS E VARIÁVEIS */
+/* 1. VARIÁVEIS GLOBAIS E RESET */
 /* =================================================== */
 :root {
-    --cor-primaria: #0a2342; /* Azul Escuro / Cor principal */
-    --cor-secundaria: #ffffff; /* Branco */
-    --cor-destaque: #d9a474; /* Ouro/Caramelo - Botões */
-    --cor-texto: #333333;
-    --cor-fundo-suave: #f9f0f5; /* Rosa/Lilás muito suave para fundo Hero */
-
-    --fonte-titulo: 'Montserrat', sans-serif;
-    --fonte-corpo: 'Roboto', sans-serif;
+    /* Paleta de Cores Elegante (Creme e Laranja Cobre) */
+    --cor-primaria: #333333;      /* Preto suave (para texto principal e elementos escuros) */
+    --cor-secundaria: #ffffff;    /* Branco puro */
+    --cor-destaque: #c95d3c;      /* Laranja Cobre Elegante (para CTA e destaque) */
+    --cor-fundo-suave: #fcf8f3;   /* Creme muito claro (Fundo principal da página) */
+    --cor-texto-claro: #f5f5f5;   /* Texto em fundos escuros */
+    
+    /* Tipografia (Mantida a Belleza e Playfair Display) */
+    --fonte-titulo: 'Playfair Display', serif;
+    --fonte-corpo: 'Belleza', sans-serif; 
 }
 
-/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-html {
+    text-decoration: none;
     scroll-behavior: smooth;
 }
 
 body {
     font-family: var(--fonte-corpo);
-    color: var(--cor-texto);
     line-height: 1.6;
+    color: var(--cor-primaria);
+    /* APLICANDO O FUNDO CREME SUAVE */
+    background-color: var(--cor-fundo-suave); 
 }
 
-/* Padding de correção para o header fixo */
-main {
-    padding-top: 85px; 
-}
-
-/* Contêiner de Centralização */
+/* Estrutura */
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Estilos de Títulos */
-h1, h2, h3 {
-    font-family: var(--fonte-titulo);
-    color: var(--cor-primaria);
-    font-weight: 700;
-}
-
 section {
-    padding: 80px 0; /* Padding padrão maior para as seções */
+    padding: 80px 0;
 }
 
+/* Títulos de Seção */
 .section-title {
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    font-size: 2.8em;
+    color: var(--cor-primaria);
     text-align: center;
     margin-bottom: 50px;
-    font-size: 2.5em;
-    font-weight: 900;
+}
+
+/* Utilitários */
+.text-center {
+    text-align: center;
 }
 
 /* =================================================== */
-/* 2. HEADER E NAVEGAÇÃO */
+/* 2. ESTILOS DE BOTÕES */
+/* =================================================== */
+.btn-novo {
+    display: inline-block;
+    /* CORRIGIDO: Gradiente em tons de Cobre */
+    background: linear-gradient(to right, #e09477, var(--cor-destaque)); 
+    color: var(--cor-secundaria);
+    padding: 15px 35px;
+    border-radius: 30px; 
+    font-family: var(--fonte-corpo);
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    /* CORRIGIDO: Sombra com a cor Cobre */
+    box-shadow: 0 4px 10px rgba(201, 93, 60, 0.4);
+}
+
+.btn-novo:hover {
+    background: linear-gradient(to right, var(--cor-destaque), #e09477);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(201, 93, 60, 0.6);
+}
+
+.btn-produto {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-produto:hover {
+    background-color: var(--cor-destaque);
+}
+
+.large-btn {
+    padding: 18px 60px;
+    font-size: 1.1em;
+}
+
+/* =================================================== */
+/* 3. HEADER E NAVEGAÇÃO */
 /* =================================================== */
 .header {
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.98);
     padding: 15px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
 }
 
 .navbar {
@@ -80,353 +123,412 @@ section {
 
 .logo {
     font-family: var(--fonte-titulo);
+    font-weight: 700;
     font-size: 1.8em;
-    font-weight: 900;
     color: var(--cor-primaria);
-    text-decoration: none;
+    letter-spacing: 1px;
 }
 
 .nav-menu a {
     color: var(--cor-primaria);
-    text-decoration: none;
-    margin-left: 25px;
-    font-weight: 500;
-    position: relative;
-    transition: color 0.3s;
+    margin-left: 30px;
+    font-weight: 400;
+    transition: color 0.3s ease;
 }
 
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--cor-destaque);
-    transition: width 0.3s;
-}
-
-.nav-menu a:hover::after {
-    width: 100%;
+.nav-menu a:hover {
+    color: var(--cor-destaque);
 }
 
 /* =================================================== */
-/* 3. BOTÕES (Geral e Novo Design) */
-/* =================================================== */
-
-/* Botão padrão (usado em Ver Detalhes) */
-.btn-produto {
-    display: inline-block;
-    background-color: var(--cor-destaque);
-    color: var(--cor-secundaria);
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 700;
-    text-transform: uppercase;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    font-size: 0.9em;
-}
-
-.btn-produto:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Botão Novo Design (usado na Hero e CTA) */
-.btn-novo {
-    display: inline-block;
-    padding: 15px 45px;
-    
-    /* Gradiente adaptado para sua cor de destaque (Ouro/Caramelo) */
-    background: linear-gradient(to right, #e3c4d7, var(--cor-destaque)); 
-    
-    color: var(--cor-primaria); 
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1rem;
-    border-radius: 30px; 
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5); 
-}
-
-.btn-novo:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* =================================================== */
-/* 4. SEÇÃO HERO (NOVO DESIGN) */
+/* 4. SEÇÃO HERO (ELEGÂNCIA) */
 /* =================================================== */
 .hero-novo-design {
-    background-color: var(--cor-fundo-suave); 
-    padding: 0;
-    min-height: 90vh; 
-    display: flex;
-    align-items: center;
+    background-color: var(--cor-fundo-suave);
+    padding-top: 100px; 
 }
 
 .hero-container-grid {
-    display: flex; 
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
+    min-height: 80vh; 
     gap: 40px;
-    width: 100%;
 }
 
 .hero-content-novo {
-    flex: 1; 
-    padding: 60px 0; 
+    padding: 40px 0;
 }
 
 .tagline-principal {
-    font-size: 1.1rem;
-    font-weight: 500;
-    color: var(--cor-texto);
-    margin-bottom: 5px;
+    font-family: var(--fonte-corpo);
+    font-weight: 400;
+    font-size: 1.1em;
+    color: var(--cor-destaque);
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .titulo-principal-hero {
-    font-size: 3.5rem;
-    font-weight: 900;
+    font-family: var(--fonte-titulo);
+    font-weight: 700;
+    font-size: 3.5em;
+    line-height: 1.2;
     color: var(--cor-primaria);
-    line-height: 1.1;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .descricao-hero {
-    font-size: 1.1rem;
-    color: var(--cor-texto);
+    font-size: 1.2em;
+    color: #555;
     margin-bottom: 40px;
     max-width: 90%;
 }
 
 .hero-imagem-fundo {
-    flex: 1; 
-    min-height: 70vh; 
-    position: relative;
-    /* Substitua a URL abaixo pela sua imagem */
-    background-image: url('imagens/IMAGEM_MODELOS.jpg'); 
-    background-size: cover;
-    background-position: center 20%; 
+    /* REMOVIDO: background-image URL aqui */
+    /* background-size: cover; */
+    /* background-position: center; */
+    min-height: 70vh;
     border-radius: 10px;
-    overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    /* Adicionado para cortar cantos arredondados na imagem */
+    overflow: hidden; 
 }
 
-/* Logo grande de fundo (Marca d'água) */
-.hero-imagem-fundo::after {
-    content: "H"; 
-    position: absolute;
-    bottom: -15%;
-    right: 0;
-    font-family: var(--fonte-titulo);
-    font-size: 30vw;
-    font-weight: 900;
-    color: rgba(217, 164, 116, 0.1); /* Cor de destaque com baixa opacidade */
-    pointer-events: none;
-    z-index: 1;
+.hero-imagem-fundo img {
+    width: 100%; 
+    /* Ajusta a altura da imagem à coluna sem distorcer e sem quebrar */
+    height: 70vh; 
+    object-fit: cover; 
+    display: block;
 }
-
 
 /* =================================================== */
-/* 5. SEÇÃO PRODUTOS */
+/* 5. SEÇÃO DIFERENCIAIS / EMPODERAMENTO */
 /* =================================================== */
-#produtos {
-    background-color: #f9f9f9;
+#diferenciais {
+    background-color: var(--cor-secundaria);
+    padding: 80px 0;
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+.large-text-diferenciais {
+    font-size: 1.4em;
+    max-width: 800px;
+    margin: 0 auto 60px auto;
+    font-weight: 400;
+    color: var(--cor-primaria);
+}
+
+.diferenciais-grid {
+    display: flex;
+    justify-content: space-between;
     gap: 30px;
 }
 
-.product-card {
-    background: var(--cor-secundaria);
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+.card-diferencial {
+    background-color: var(--cor-fundo-suave);
+    padding: 30px;
+    border-radius: 10px;
+    flex: 1;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.product-card img {
-    width: 100%;
-    height: auto; 
-    aspect-ratio: 3 / 4; 
-    object-fit: cover;
-    border-radius: 8px 8px 0 0; 
-}
-
-.product-info {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-}
-
-.product-info h3 {
+.card-diferencial h3 {
+    color: var(--cor-destaque);
+    font-family: var(--fonte-titulo);
     font-size: 1.4em;
     margin-bottom: 10px;
 }
 
-.product-info p {
-    margin-bottom: 20px;
+/* =================================================== */
+/* 6. SEÇÃO PRODUTOS */
+/* =================================================== */
+#produtos {
+    background-color: var(--cor-fundo-suave);
+    padding: 80px 0;
 }
 
-.product-info .btn-produto {
-    margin-top: auto;
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    display: flex; 
+    flex-direction: column;
+    background-color: var(--cor-secundaria);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img {
+    width: 100%; 
+    /* AJUSTADO: Removendo altura fixa para evitar quebras. A imagem se ajustará à largura da coluna. */
+    height: auto; 
+    object-fit: cover; 
+    border-radius: 10px 10px 0 0; 
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-info h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 1.5em;
+    color: var(--cor-primaria);
+    margin-bottom: 10px;
 }
 
 /* =================================================== */
-/* 6. SEÇÃO SOBRE NÓS */
+/* 7. SEÇÃO DEPOIMENTOS DE CLIENTES (Prints) */
 /* =================================================== */
-.about-grid {
+#depoimentos {
+    background-color: var(--cor-secundaria);
+    padding: 80px 0;
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 30px;
+}
+
+.depoimento-card {
+    background-color: var(--cor-fundo-suave);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* =================================================== */
+/* 8. SEÇÃO REVENDA (Fábrica/Vantagens) */
+/* =================================================== */
+#revenda {
+    background-color: var(--cor-fundo-suave); 
+    padding: 80px 0;
+}
+
+.fabrica-info {
     display: flex;
-    align-items: center;
-    gap: 50px;
+    align-items: flex-start;
+    gap: 60px;
+    margin-bottom: 60px;
+    padding: 50px;
+    background-color: var(--cor-secundaria);
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
 }
 
-.about-image {
+.fabrica-imagem {
     flex: 1;
+    max-width: 45%;
 }
-.about-image img {
+
+.fabrica-imagem img {
     width: 100%;
+    height: auto; /* Garantindo que a imagem se ajusta sem quebra */
     border-radius: 8px;
 }
 
-.about-text {
+.fabrica-texto {
     flex: 1;
+    max-width: 55%;
+    padding-top: 15px; 
 }
 
-.about-text h2 {
+.fabrica-texto h3 {
+    font-size: 2.2em;
+    color: var(--cor-destaque);
+    margin-bottom: 20px;
+    font-family: var(--fonte-titulo);
+}
+
+/* Estilização da Nova Lista de Vantagens */
+.lista-vantagens-revenda {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.lista-vantagens-revenda li {
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    padding-left: 30px;
+    position: relative;
+    font-weight: 500;
+}
+
+.lista-vantagens-revenda li::before {
+    content: "✓"; 
+    color: var(--cor-destaque);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+}
+
+.para-quem h3 {
+    font-family: var(--fonte-titulo);
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: var(--cor-primaria);
+}
+
+/* Estilo para a lista de Processo Simples (COM ÍCONES COBRE) */
+.processo-simples ol {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    counter-reset: none; 
+}
+
+.processo-simples ol li {
+    background-color: var(--cor-fundo-suave);
+    color: var(--cor-primaria);
+    padding: 20px 30px;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1.1em;
+    max-width: 250px;
+    position: relative;
+    text-align: left;
+    margin-top: 0;
+    padding-left: 50px; 
+}
+
+.processo-simples ol li::before {
+    content: "\2713"; 
+    color: var(--cor-destaque); 
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    font-family: Arial, sans-serif;
+    font-weight: bold; 
+    background: none; 
+    width: auto;
+    height: auto;
+    line-height: normal;
+}
+
+.processo-simples ol li::marker {
+    content: "";
+}
+
+/* =================================================== */
+/* 9. DEPOIMENTOS DE REVENDEDORES (Testemunhos) */
+/* =================================================== */
+.revendedor-depoimentos {
+    background-color: var(--cor-secundaria);
+    padding: 80px 0;
+}
+
+.citação {
+    font-family: var(--fonte-titulo);
+    font-style: italic;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    color: var(--cor-primaria);
+}
+
+/* =================================================== */
+/* 10. CTA FINAL (Vagas Limitadas) */
+/* =================================================== */
+.cta-final {
+    background-color: var(--cor-primaria);
+    padding: 60px 0;
+    color: var(--cor-texto-claro);
+    text-align: center;
+}
+
+.cta-final h2 {
+    color: var(--cor-texto-claro);
+    font-family: var(--fonte-titulo);
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: var(--cor-destaque); /* Destaque na cor caramelo */
 }
 
 /* =================================================== */
-/* 7. SEÇÃO CTA FINAL */
-/* =================================================== */
-.cta {
-    /* Gradiente e imagem de fundo para efeito chamativo */
-    background-image: linear-gradient(rgba(10, 35, 66, 0.8), rgba(10, 35, 66, 0.8)), 
-                      url('imagens/bg-cta-jeans.jpg'); /* Substitua a URL pela sua imagem */
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed; /* Efeito Parallax */
-    padding: 80px 20px;
-    text-align: center;
-    color: var(--cor-secundaria);
-}
-
-.cta h2 {
-    font-size: 2.2em;
-    color: var(--cor-secundaria);
-    margin-bottom: 35px;
-}
-
-/* =================================================== */
-/* 8. FOOTER */
+/* 11. FOOTER */
 /* =================================================== */
 .footer {
     background-color: var(--cor-primaria);
-    color: #a7b4c4; 
-    padding-top: 40px;
-    padding-bottom: 40px;
+    color: #cccccc;
+    padding: 40px 0;
     text-align: center;
 }
 
 .social-icons a {
-    color: var(--cor-secundaria);
-    margin: 0 15px;
-    transition: color 0.3s;
+    color: #cccccc;
 }
 
 .social-icons a:hover {
     color: var(--cor-destaque);
 }
 
-.social-icons a svg {
-    width: 28px;
-    height: 28px;
-    fill: currentColor; 
-    stroke: currentColor;
-    /* Ajuste para ícones sólidos de redes sociais */
-    stroke-width: 0; 
-}
-
 /* =================================================== */
-/* 9. RESPONSIVIDADE (MOBILE E TABLETS) */
+/* 12. RESPONSIVIDADE (Ajustes para Mobile) */
 /* =================================================== */
 @media (max-width: 992px) {
-    /* Hero em Coluna */
+    /* Estrutura Geral */
+    .section-title {
+        font-size: 2em;
+    }
+
+    /* Hero Section */
     .hero-container-grid {
-        flex-direction: column;
-        text-align: center;
+        grid-template-columns: 1fr;
     }
-    
-    .hero-novo-design {
-        padding-bottom: 40px;
+    .titulo-principal-hero {
+        font-size: 2.5em;
     }
-
     .hero-imagem-fundo {
-        min-height: 50vh;
-        width: 100%;
-        border-radius: 0;
+        min-height: 40vh;
+    }
+
+    /* Demais seções em coluna */
+    .diferenciais-grid,
+    .para-quem-grid {
+        flex-direction: column;
+        gap: 20px;
     }
     
-    .hero-imagem-fundo::after {
-        font-size: 50vw;
-        bottom: 0;
-    }
-
-    /* Navegação */
-    .navbar {
+    .fabrica-info {
         flex-direction: column;
-        align-items: stretch; 
-    }
-
-    .nav-menu {
-        margin-top: 10px;
-        display: flex; 
-        justify-content: space-around; 
-        flex-wrap: wrap; 
-    }
-
-    .nav-menu a {
-        padding: 8px 10px; 
-        margin: 5px 0;
-    }
-    
-    .nav-menu a::after {
-        display: none;
-    }
-
-    /* Outras Seções */
-    .about-grid {
-        flex-direction: column;
+        align-items: center;
         gap: 30px;
     }
     
-    .about-image {
-        order: -1; 
+    .fabrica-imagem, .fabrica-texto {
+        max-width: 100%;
+        width: 100%;
+        text-align: center;
+    }
+
+    .fabrica-texto {
+        padding-top: 0;
+        text-align: left;
     }
     
-    .section-title, .about-text h2, .titulo-principal-hero {
-        font-size: 2.2em;
+    .processo-simples ol {
+        flex-direction: column;
+        align-items: center;
     }
-    
-    .hero-content-novo, .about-text, .about-image {
-        padding: 0 10px; /* Ajusta padding para mobile */
+
+    /* CTA Final */
+    .cta-final h2 {
+        font-size: 2em;
     }
 }
