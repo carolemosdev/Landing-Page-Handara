@@ -1,67 +1,84 @@
 # 🚀 Landing Page - Handara
 
-Uma Landing Page simples e **responsiva** desenvolvida para a marca **Handara**, com foco em capturar leads.
+![Status do Projeto](https://img.shields.io/badge/Status-Finalizado-brightgreen) ![PHP Version](https://img.shields.io/badge/PHP-8.0%2B-blue) ![License](https://img.shields.io/badge/License-Proprietário-red)
+
+> Uma Landing Page de alta conversão, responsiva e otimizada para captura de leads da marca **Handara**.
+
+<img width="1597" height="742" alt="image" src="https://github.com/user-attachments/assets/9af2bacb-5e7c-4012-86b0-bd7f59d61579" />
+
+
+## 📋 Sobre o Projeto
+
+Este projeto foi desenvolvido para apoiar as estratégias de marketing digital da **Handara**. O objetivo principal é oferecer uma interface limpa e direta para potenciais clientes (leads), garantindo uma experiência de navegação fluida tanto em desktops quanto em dispositivos móveis.
+
+A página foi construída com foco em **performance** e **SEO**, utilizando uma estrutura leve sem dependência de frameworks pesados.
+
+---
+
+## ✨ Funcionalidades
+
+* ✅ **Design Responsivo:** Layout adaptável para Celulares, Tablets e Desktops.
+* ✅ **Formulário de Captura:** Integração para envio de dados de leads (nome, telefone, etc).
+* ✅ **Call-to-Action (CTA):** Botões estratégicos focados em conversão.
+* ✅ **Performance:** Carregamento rápido otimizado com CSS puro e HTML semântico.
+* ✅ **Backend Simples:** Processamento básico via PHP (`index.php`) para renderização dinâmica ou envio de dados.
 
 ---
 
 ## 💻 Tecnologias Utilizadas
 
-Este projeto foi construído utilizando tecnologias base do desenvolvimento web:
+Ferramentas escolhidas para garantir estabilidade e facilidade de manutenção:
 
-* **HTML5:** Estrutura semântica da página.
-* **CSS3:** Estilização e layout responsivo.
-* **PHP:** Processamento backend e renderização da página (`index.php`).
+* ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white) **HTML5:** Estrutura semântica.
+* ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) **CSS3:** Estilização customizada e media queries.
+* ![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white) **PHP:** Lógica de servidor e rotas simples.
 
 ---
 
-## 📂 Estrutura do Projeto
-
-A organização dos arquivos é a seguinte:
+## 📂 Estrutura de Arquivos
 
 | Arquivo/Pasta | Descrição |
 | :--- | :--- |
-| **`index.php`** | Página principal da Landing Page. |
-| **`style.css`** | Folha de estilos principal do projeto. |
-| **`imagens/`** | Pasta contendo todos os ativos visuais utilizados. |
-| `README.md` | Documentação do projeto. |
+| `index.php` | Ponto de entrada da aplicação e estrutura HTML. |
+| `style.css` | Folha de estilos principal. |
+| `imagens/` | Diretório de assets (logos, banners, ícones). |
+| `README.md` | Documentação técnica do projeto. |
 
 ---
 
-## 🏃 Como Rodar o Projeto Localmente
+## 🚀 Como Executar o Projeto
 
-Como o projeto utiliza um arquivo `.php`, você precisará de um servidor local para visualizá-lo corretamente.
+Siga os passos abaixo para rodar a aplicação em seu ambiente local.
 
 ### Pré-requisitos
-* Ter o [PHP](https://www.php.net/downloads) instalado na sua máquina.
 
-### Passo a passo
+* Ter o [PHP](https://www.php.net/downloads) instalado e configurado no PATH do sistema.
 
-1.  **Clone o Repositório:**
+### Passo a Passo
+
+1.  **Clone o repositório**
     ```bash
     git clone [https://github.com/carolemosdev/Landing-Page-Handara.git](https://github.com/carolemosdev/Landing-Page-Handara.git)
     ```
 
-2.  **Entre na Pasta do Projeto:**
+2.  **Acesse a pasta do projeto**
     ```bash
     cd Landing-Page-Handara
     ```
 
-3.  **Inicie um Servidor Local:**
-    Execute o seguinte comando no terminal para iniciar o servidor embutido do PHP:
+3.  **Inicie o servidor local do PHP**
     ```bash
     php -S localhost:8000
     ```
 
-4.  **Acesse no Navegador:**
-    Abra o seu navegador e digite o endereço:
-    `http://localhost:8000`
+4.  **Acesse no navegador**
+    Abra `http://localhost:8000` para ver a página rodando.
 
 ---
 
-## ✍️ Autor
+## 🤝 Autor
 
-Desenvolvido por:
+Desenvolvido com carinho por **Carol Lemos**.
 
-* **Carol Lemos** (@carolemosdev)
-* [**LinkedIn**](https://linkedin.com/in/carollemos)
-* [**GitHub**](https://github.com/carolemosdev)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/carollemos)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/carolemosdev)
